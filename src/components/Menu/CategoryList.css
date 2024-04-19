@@ -1,0 +1,8 @@
+.CategoryListoMenu{
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    list-style: none;
+    gap:15px;
+    padding-right: 20px;
+}
