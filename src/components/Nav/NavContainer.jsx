@@ -1,9 +1,12 @@
+import Brand from '../Brand/Brand';
 import '../Nav/NavContainer.css'
+import NavBar from '../NavBar/NavBar';
 
 function NavContainer(){
     return(
         <div className='Nav-Container'>
-            <h1><a href=""><img src="/src/assets/Logo Lixs v3.png" alt="" /></a></h1>
+            <Brand/>
+            <NavBar/>
         </div>
     );
 }

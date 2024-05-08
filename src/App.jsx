@@ -1,18 +1,14 @@
 import './App.css'
-import Brand from './components/Menu/Brand'
-import ItemListContainer from './components/Menu/ItemListContainer'
+import Brand from './components/Brand/Brand'
+import ItemListContainer from './components/ItemList/ItemListContainer'
+import Layout from './components/Layout/Layout'
 import NavBar from './components/NavBar/NavBar'
 
 function App() {
  return (
-  <div>
-    <div className='Menu'>
-      <Brand/>
-      <NavBar/>
-    </div>
-    <ItemListContainer greeting="Hola Tutor"/>
-  </div>
+  <Layout>
 
+  </Layout>
   )
 }
 

@@ -1,4 +1,4 @@
-import '../Menu/Brand.css'
+import '../Brand/Brand.css'
 
 function Brand(){
     return(
