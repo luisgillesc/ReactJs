@@ -11,6 +11,7 @@ function Layout({children}) {
                 <NavContainer/>
             </div>
             <main className="main-container">
+                {children}
             </main>
             <Footer/>
         </div>

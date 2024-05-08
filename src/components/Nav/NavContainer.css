@@ -1,6 +1,6 @@
 .Nav-Container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 20px;
     align-items: center;
 }

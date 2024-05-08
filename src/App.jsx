@@ -1,14 +1,21 @@
 import './App.css'
-import Brand from './components/Brand/Brand'
 import ItemListContainer from './components/ItemList/ItemListContainer'
 import Layout from './components/Layout/Layout'
-import NavBar from './components/NavBar/NavBar'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
 function App() {
  return (
-  <Layout>
-
-  </Layout>
+  <BrowserRouter>
+    <Layout>
+    <Routes>
+      <Route path='/' element= {<ItemListContainer greeting={"Hola"}/> }/>
+      <Route path='/Matrimonio' element={<a href="/#">jewelery</a>}/>
+      <Route path="/men's%20clothing" element={<a href="/#">men's clothing</a>}/>
+      <Route path="/women's%20clothing" element={<a href="/#">women's clothing</a>}/>
+      <Route path='*' element={<h1>Not Found</h1>}/>
+    </Routes>
+    </Layout>
+  </BrowserRouter>
   )
 }
 
