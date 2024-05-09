@@ -18,7 +18,12 @@ function Item({ product }) {
           Rating: {product.rating.rate} ({product.rating.count} reviews)
         </div>
         <div className='item-counter-container'>
+          <br />
             <ItemCount stock={2} count={count} subt={subt} add={add}/>
+        </div>
+        <div>
+          <br />
+          <button class="cart-button">Agregar al carrito</button>
         </div>
       </div>
     </div>

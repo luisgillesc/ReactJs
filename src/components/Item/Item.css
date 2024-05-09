@@ -41,3 +41,22 @@
     font-size: 0.9rem;
     color: #6c757d;
   }
+  .cart-button {
+    padding: 10px 20px; /* Ajusta el relleno según sea necesario */
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    border: none; /* Elimina el borde */
+    border-radius: 5px; /* Borde redondeado */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Peso de la fuente */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+  }
+  
+  .cart-button:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón */
+  }
+  
+  .cart-button:focus {
+    outline: none; /* Elimina el contorno al hacer clic en el botón */
+  }
