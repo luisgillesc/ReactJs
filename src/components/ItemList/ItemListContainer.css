@@ -1,0 +1,8 @@
+  .main {
+    margin: 20px;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    min-height: 100vh; /* Establece una altura mínima para que el main ocupe al menos toda la altura de la ventana del navegador */
+  }

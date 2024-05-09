@@ -1,9 +1,11 @@
 import Item from "../Item/Item/";
+import './ItemListContainer.css'
 
 function ItemListContainer({greeting}) {
     return(
-        <div>
+        <div className="main">
             <h1>{greeting}</h1>
+            <spam></spam>
             <Item product={    {
         "id": 3,
         "title": "Mens Cotton Jacket",
