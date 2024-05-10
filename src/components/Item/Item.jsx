@@ -1,5 +1,5 @@
 import React from 'react';
-import '/src/components/Item/Item.css' // Asegúrate de tener un archivo CSS llamado Card.css para estilos personalizados
+import '/src/components/Item/Item.css';// Asegúrate de tener un archivo CSS llamado Card.css para estilos personalizados
 import ItemCount from '../ItemCount/ItemCount';
 import useCount from '../../hooks/useCount';
 import { Link } from 'react-router-dom';
@@ -28,7 +28,7 @@ function Item({ product }) {
         </div>
         <div>
           <br />
-          <button class="cart-button">Agregar al carrito</button>
+          <button className="cart-button">Agregar al carrito</button>
         </div>
       </div>
     </div>

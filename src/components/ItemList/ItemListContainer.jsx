@@ -10,13 +10,21 @@ import useCategory from "../../hooks/useCategory";
 function ItemListContainer({greeting}) {
     const {productid}=useParams();
     const {products,loading}=useProducs();
-    if (typeof productid==='string'&& productid !== undefined) {
-        const {products,loading}=useCategory(productid);
-    };
-    if (typeof productid==='number'&& productid !== undefined) {
+    // Convierte productid a un número entero
+    const productIdNumber = parseInt(productid);
+    const {product,loading:productLoading}=useProduc(productid);
+    console.log(isNaN(productIdNumber));
+
+    if(isNaN(productIdNumber)){
+        console.log(productid);
+        const {products,loading:productLoading}=useCategory(productid);
+    }else{
+        console.log('product');
         const {product,loading:productLoading}=useProduc(productid);
     };
-console.log(productid);
+
+    console.log(productIdNumber);
+console.log(typeof productIdNumber);
     
     return(
         <div className="main">
