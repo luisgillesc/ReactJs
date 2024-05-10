@@ -5,11 +5,19 @@ import useProducs from "../../hooks/useProducts";
 import { useParams } from "react-router-dom";
 import useProduc from "../../hooks/useProduct";
 import Item from "../Item/Item/";
+import useCategory from "../../hooks/useCategory";
 
 function ItemListContainer({greeting}) {
     const {productid}=useParams();
     const {products,loading}=useProducs();
-    const {product,loading:productLoading}=useProduc(productid);
+    if (typeof productid==='string'&& productid !== undefined) {
+        const {products,loading}=useCategory(productid);
+    };
+    if (typeof productid==='number'&& productid !== undefined) {
+        const {product,loading:productLoading}=useProduc(productid);
+    };
+console.log(productid);
+    
     return(
         <div className="main">
             <h1>{greeting}</h1>

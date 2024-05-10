@@ -10,8 +10,7 @@ function App() {
     <Routes>
       <Route path='/' element= {<ItemListContainer greeting={"Hola"}/> }/>
       <Route path='/product/:productid' element={<ItemListContainer greeting={"Hola"}/> }/>
-      <Route path="/men's%20clothing" element={<a href="/#">men's clothing</a>}/>
-      <Route path="/women's%20clothing" element={<a href="/#">women's clothing</a>}/>
+      <Route path="/category/:category" element={<a href="/#">Categoria jewelery</a>}/>
       <Route path='*' element={<h1>Not Found</h1>}/>
     </Routes>
     </Layout>
