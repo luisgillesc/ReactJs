@@ -1,11 +1,15 @@
 .card-container {
-    width: 300px; /* Tamaño fijo */
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden; /* Para ocultar cualquier parte de la imagen que se desborde */
   }
   
   .card-img {
@@ -13,6 +17,8 @@
     height: 200px; /* Tamaño fijo */
     object-fit: cover; /* Para asegurarse de que la imagen cubra completamente el contenedor */
     border-radius: 5px;
+    object-fit: cover; /* Para asegurarse de que la imagen cubra completamente el contenedor */
+    margin: 10px;
   }
   
   .card-title {
@@ -58,4 +64,7 @@
   
   .cart-button:focus {
     outline: none; /* Elimina el contorno al hacer clic en el botón */
+  }
+  .card-body{
+    padding: 10px;
   }
