@@ -1,23 +1,34 @@
-import Item from "../Item/Item/";
+import { useState , useEffect} from "react";
 import './ItemListContainer.css'
+import ItemList from "../Item/ItemList";
 
 function ItemListContainer({greeting}) {
+
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+        .then((response) => response.json())
+        .then((data) => {
+            setProducts(data);
+            setLoading(false); // Se establece loading en false cuando se reciben las categorías
+        })
+        .catch((error) => {
+            console.error('Error fetching categories:', error);
+            setLoading(false); // También se establece loading en false en caso de error
+        });
+    }, []);
+
     return(
         <div className="main">
             <h1>{greeting}</h1>
             <spam></spam>
-            <Item product={    {
-        "id": 3,
-        "title": "Mens Cotton Jacket",
-        "price": 55.99,
-        "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-        "category": "men's clothing",
-        "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-        "rating": {
-            "rate": 4.7,
-            "count": 500
-        }
-    }}/>
+            {loading ? ( // Se muestra el indicador de carga si loading es true
+                        <p>Cargando productos...</p>
+                    ) : (
+                        <ItemList products={products}/>
+                        )}
         </div>
     );
 }
