@@ -1,4 +1,5 @@
 import './App.css'
+import ItemListCategoryContainer from './components/ItemList/ItemListCategoryContainer'
 import ItemListContainer from './components/ItemList/ItemListContainer'
 import Layout from './components/Layout/Layout'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
@@ -9,8 +10,8 @@ function App() {
     <Layout>
     <Routes>
       <Route path='/' element= {<ItemListContainer greeting={"Hola"}/> }/>
-      <Route path='/product/:productid' element={<ItemListContainer greeting={"Hola"}/> }/>
-      <Route path='/category/:category' element={<ItemListContainer greeting={"Hola"}/> }/>
+      <Route path='/product/:productid' element={<ItemListContainer greeting={"Hola"}/>}/>
+      <Route path='/category/:category' element={<ItemListCategoryContainer/> }/>
       <Route path='*' element={<h1>Not Found</h1>}/>
     </Routes>
     </Layout>

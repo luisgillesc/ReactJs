@@ -9,7 +9,7 @@ function CategoryList() {
             <Link to={"/"}>Item List Container</Link>
         </li>
         <li>
-            <a href="/category/:id">Item List Container ID</a>
+            <Link to={"/category/jewelery"}>jewelery</Link>
         </li>
         <li>
             <a href="/#">Stickers</a>

@@ -10,22 +10,9 @@ import useCategory from "../../hooks/useCategory";
 function ItemListContainer({greeting}) {
     const {productid}=useParams();
     const {products,loading}=useProducs();
-    // Convierte productid a un número entero
-    const productIdNumber = parseInt(productid);
     const {product,loading:productLoading}=useProduc(productid);
-    console.log(isNaN(productIdNumber));
 
-    if(isNaN(productIdNumber)){
-        console.log(productid);
-        const {products,loading:productLoading}=useCategory(productid);
-    }else{
-        console.log('product');
-        const {product,loading:productLoading}=useProduc(productid);
-    };
 
-    console.log(productIdNumber);
-console.log(typeof productIdNumber);
-    
     return(
         <div className="main">
             <h1>{greeting}</h1>

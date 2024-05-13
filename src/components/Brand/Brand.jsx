@@ -1,9 +1,10 @@
 import '../Brand/Brand.css'
+import {Link} from 'react-router-dom'
 
 function Brand(){
     return(
         <div>
-            <h1><a href=""><img src="/src/assets/Logo Lixs v3.png" alt="" /></a></h1>
+            <h1><Link to={"/"}><img src="/src/assets/Logo Lixs v3.png" alt="" /></Link></h1>
         </div>
     );
 }

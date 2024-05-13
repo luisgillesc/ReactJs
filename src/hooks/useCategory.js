@@ -7,7 +7,7 @@ function useCategory(category) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/category/'+category)
+        fetch('https://fakestoreapi.com/products/category/'+category)
         .then((response) => response.json())
         .then((data) => {
             setProducts(data);
@@ -17,7 +17,7 @@ function useCategory(category) {
             console.error('Error fetching categories:', error);
             setLoading(false); // También se establece loading en false en caso de error
         });
-    }, []);
+    }, [category]);
     return{products,loading};
 }
 export default useCategory;
