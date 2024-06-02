@@ -3,7 +3,7 @@ import '../Footer/Footer.css'
 function Footer() {
     return (
       <footer>
-        <p>© 2021 Shoppy. All rights reserved.</p>
+        <p>© 2024 Lixs Papeleria Creativa. All rights reserved.</p>
       </footer>
     );
   }

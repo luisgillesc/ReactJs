@@ -3,9 +3,17 @@ import '/src/components/Item/Item.css';// Asegúrate de tener un archivo CSS lla
 import ItemCount from '../ItemCount/ItemCount';
 import useCount from '../../hooks/useCount';
 import { Link } from 'react-router-dom';
+//import { useContext } from 'react';
+//import CartContext from '../context/CartContext/CartContext';
 
 function Item({ product }) {
     const {count,add,subt}=useCount(0);
+    //const { agregarCart} = useContext(CartContext);
+
+    //const handlerAgregarCart =()=>{
+    //  agregarCart(product,count);
+      //redirigir 
+   // }
 
   return (
     <div className="card-container">
@@ -18,7 +26,7 @@ function Item({ product }) {
         </Link>
         <p className="card-price">${product.price}</p>
         <p className="card-description">{product.description}</p>
-        <p className="card-category">Category: {product.category}</p>
+        <p className="card-category">Category: {product.categoryId}</p>
         <div className="card-rating">
           Rating: {product.rating.rate} ({product.rating.count} reviews)
         </div>
