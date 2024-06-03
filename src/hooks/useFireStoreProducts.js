@@ -6,7 +6,6 @@ const useProductos = ({ type, value }) => {
     console.log(type);
     console.log(value);
     const db = getFirestore();
-  
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -20,20 +19,20 @@ const useProductos = ({ type, value }) => {
         const productosSnapshot = await getDocs(productosCollection);
         const productosList = productosSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         setProductos(productosList);
+        
       } catch (err) {
         setError(err.message);
       } finally {
         setLoading(false);
       }
     };
-
       // Obtener productos por categoría
   const ProductosByCategoria = async (categoria) => {
     setLoading(true);
     setError(null);
     try {
       const productosCollection = collection(db, 'productos');
-      const q = query(productosCollection, where('categoria', '==', categoria));
+      const q = query(productosCollection, where('categoryId', '==', categoria));
       const productosSnapshot = await getDocs(q);
       const productosList = productosSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
@@ -75,7 +74,7 @@ const useProductos = ({ type, value }) => {
           ProductoById(value);
         }
       }, [type, value]);
-    
+      console.log(error);
       return {
         productos,
         loading,

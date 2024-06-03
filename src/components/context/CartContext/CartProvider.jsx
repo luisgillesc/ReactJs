@@ -8,6 +8,7 @@ function CartProvider({children}) {
 
     const agregar = (producto,cantidad)=>{
         const InCart=cart.find((item)=>item.producto.productoId==producto.productoId)
+        
     };
     const remover = (productoId,cantidad)=>{
 

@@ -1,5 +1,16 @@
-.NavBarOderItem{
+nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px 10%;
+    list-style: none;
+}
+
+nav li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
 }

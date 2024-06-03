@@ -6,15 +6,25 @@ import { useParams } from "react-router-dom";
 import useProduc from "../../hooks/useProduct";
 import Item from "../Item/Item/";
 import useCategory from "../../hooks/useCategory";
+import useProductos from "../../hooks/useFireStoreProducts";
 
 function ItemListCategoryContainer() {
     const {category}=useParams();
-    const {products,loading}=useCategory(category);
-
+    //const {products,loading}=useCategory(category);
+    const { productos, loading, error } = useProductos({ type: 'category', value: category });
+   
+    if (loading) {
+        return <p>Cargando...</p>;
+      }
+    //          <ProductCard products={productos}/>
+      // Manejo de errores unificado
+      if (error) {
+        return <p>Error al cargar los datos: {error}</p>;
+      }
 
     return(
         <div className="main">
-            <ItemList products={products}/>
+            <ItemList products={productos}/>
         </div>
     );
 }

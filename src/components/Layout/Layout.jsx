@@ -7,13 +7,17 @@ import NavBar from "../NavBar/NavBar";
 function Layout({children}) {
     return(
         <div className="layout-container">
-            <div className="header-wrapper">
-                <NavContainer/>
-            </div>
+            <header className="header-container">
+                <div className="header-wrapper">
+                    <NavContainer/>
+                </div>
+            </header>
             <main className="main-container">
                 {children}
             </main>
-            <Footer/>
+            <footer className="footer-container">
+                <Footer/>
+            </footer>
         </div>
     );
 }
