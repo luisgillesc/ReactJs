@@ -3,6 +3,7 @@ import '/src/components/ProductCard/ProductCardv2.css';
 import ItemCount from '../ItemCount/ItemCount';
 import useCount from '../../hooks/useCount';
 import CartContext from '../context/CartContext/CartContext';
+import { Link } from 'react-router-dom';
 //import { Link } from 'react-router-dom';
 
 function ProductCardv2 ({ product }) {
@@ -19,7 +20,6 @@ function ProductCardv2 ({ product }) {
             quantity: count,
         };
         addItem(itemToAdd); // Añadir el producto al carrito
-        console.log(itemToAdd);
     };
     
     return (
@@ -27,13 +27,14 @@ function ProductCardv2 ({ product }) {
             <div className="product__photo">
                 <div className="photo-container">
                     <div className="photo-main">
-                        <img src={product.image} alt={product.title}/>
+                    <Link to={`/product/${product.id}`}><img src={product.image} alt={product.title}/></Link>
                     </div>
                 </div>
             </div>
             <div className="product__info">
             <div className="title">
-                <h1>{product.title}</h1>
+            <Link to={`/product/${product.id}`}><h1>{product.title}</h1></Link>
+                
                 <span>COD: {product.id}</span>
             </div>
             <div className="price">

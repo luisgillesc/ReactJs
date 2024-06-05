@@ -3,6 +3,7 @@ import CartContext from '../context/CartContext/CartContext';
 import "./CartItem.css"
 import useCount from '../../hooks/useCount';
 import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 
 
 function CartItem ({ item }) {
@@ -11,7 +12,7 @@ function CartItem ({ item }) {
 
     return (
         <div className="cart-item">
-            <img src={item.image} alt={item.title} />
+            <Link to={`/product/${item.id}`}><img src={item.image} alt={item.title} /></Link>
             <div>
                 <h3>{item.title}</h3>
                 <div className='ItemCount-Container'>
