@@ -1,12 +1,19 @@
-import React, { createContext, useState } from 'react';
-import CartContext from './CartContext';
+import React, { useState } from 'react';
+import CartContext from '../CartContext/CartContext';
 
 
 function CartProvider  ({ children })  {
     const [cart, setCart] = useState([]);
-
+console.log(cart);
     const addItem = (item) => {
-        setCart([...cart, item]);
+        const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
+        if (existingItemIndex >= 0) {
+            const updatedCart = [...cart];
+            updatedCart[existingItemIndex].quantity += item.quantity;
+            setCart(updatedCart);
+        } else {
+            setCart([...cart, item]);
+        }
     };
 
     const removeItem = (id) => {

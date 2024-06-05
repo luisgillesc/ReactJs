@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
     const [isFlipped, setIsFlipped] = useState(false);
-    //const [quantity, setQuantity] = useState(1);
     const {count,add,subt}=useCount(0);
     
     const handleFlip = () => {

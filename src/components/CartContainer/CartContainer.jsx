@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
-import { CartContext } from './CartContext';
-import CartItem from './CartItem';
+import { useContext } from 'react';
+import CartItem from '../CartItem/CartItem';
+import CartContext from '../context/CartContext/CartContext';
 
 function CartContainer ()  {
     const { cart, clearCart } = useContext(CartContext);
+    console.log(cart);
+
+    // Calcular el total del carrito
+    const totalAmount = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
     return (
         <div className="cart-container">
@@ -15,6 +19,9 @@ function CartContainer ()  {
                     {cart.map(item => (
                         <CartItem key={item.id} item={item} />
                     ))}
+                                      <div className="cart-total">
+                        <h3>Total: ${totalAmount.toFixed(2)}</h3>
+                    </div>
                     <button onClick={clearCart}>Clear Cart</button>
                 </>
             )}

@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '/src/components/ProductCard/ProductCardv2.css';
 import ItemCount from '../ItemCount/ItemCount';
 import useCount from '../../hooks/useCount';
+import CartContext from '../context/CartContext/CartContext';
 //import { Link } from 'react-router-dom';
 
 function ProductCardv2 ({ product }) {
     console.log(product);
     const {count,add,subt}=useCount(0);
+    const { addItem } = useContext(CartContext);
+
+    const handleAddToCart = () => {
+        const itemToAdd = {
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            image: product.image,
+            quantity: count,
+        };
+        addItem(itemToAdd); // Añadir el producto al carrito
+        console.log(itemToAdd);
+    };
     
     return (
         <div className="product">
@@ -39,7 +53,7 @@ function ProductCardv2 ({ product }) {
                     <ItemCount stock={2} count={count} subt={subt} add={add}/>
                 <br />
             </div>
-            <button className="buy--btn">ADD TO CART</button>
+            <button className="buy--btn" onClick={handleAddToCart} >ADD TO CART</button>
         </div>
     </div>
     );
